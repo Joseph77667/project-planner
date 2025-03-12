@@ -3,7 +3,7 @@
         <div class="flexing">
             <h2 @click="showDetails = !showDetails">{{ project.name }}</h2>
             <div class="icons">
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-outlined" @click="deleteProject">
                     delete
                 </span>
                 <span class="material-symbols-outlined">
@@ -22,10 +22,22 @@
 export default {
     data() {
         return {
+            api: 'http://localhost:3000/projects/',
             showDetails: false
         }
     },
-    props: ['project']
+    props: ['project'],
+    methods:{
+        deleteProject(){
+            let deleteRoute = this.api + this.project.id;
+            fetch(deleteRoute, {
+                method: 'DELETE'
+            })
+            .then(() => {
+                this.$emit('delete-project', this.project.id);
+            })
+        }
+    }
 }
 </script>
 

@@ -2,7 +2,7 @@
   <div class="home">
     <h1>Home Page</h1>
     <div v-for="project in projects" :key="project.id">
-      <SingleProduct :project = "project"></SingleProduct>
+      <SingleProduct :project = "project" @delete-project="deleteProject"></SingleProduct>
     </div>
   </div>
 </template>
@@ -16,6 +16,11 @@ export default {
   data(){
     return {
       projects  : []
+    }
+  },
+  methods:{
+    deleteProject(id){
+      this.projects = this.projects.filter(project => project.id !== id)
     }
   },
   mounted(){

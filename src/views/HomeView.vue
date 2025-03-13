@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>Home Page</h1>
+    <h3>All Projects</h3>
     <div v-for="project in projects" :key="project.id">
       <SingleProduct :project = "project" 
       @delete-project="deleteProject"

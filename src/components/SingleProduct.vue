@@ -60,7 +60,7 @@ export default {
 .project {
     border: 1px solid #ccc;
     background-color: #f2f2f2;
-    margin: 10px;
+    margin: 10px 0;
     padding: 10px 20px;
     border-left: 6px solid rgb(11, 228, 11);
     border-radius: 5px;

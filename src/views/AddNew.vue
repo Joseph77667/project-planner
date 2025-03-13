@@ -61,7 +61,7 @@ input{
     box-sizing: border-box;
 }
 textarea{
-    width: 100%;
+    max-width: 100%;
     padding: 10px;
     border: 0;
     border-bottom: 1px solid #000;

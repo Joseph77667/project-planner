@@ -6,9 +6,12 @@
                 <span class="material-symbols-outlined" @click="deleteProject">
                     delete
                 </span>
-                <span class="material-symbols-outlined">
-                    edit
-                </span>
+                <router-link :to="{name: 'EditProject', params: {id: project.id}}">
+                    <span class="material-symbols-outlined">
+                        edit
+                    </span>
+                </router-link>
+                
                 <span class="material-symbols-outlined" @click="completeProject">
                     done
                 </span>
@@ -70,6 +73,11 @@ export default {
 }
 h2{
     cursor: pointer;
+}
+p{
+  max-height: 150px; 
+  overflow: auto; 
+  word-wrap: break-word; 
 }
 .flexing {
     display: flex;
